@@ -3,11 +3,9 @@ import React from "react";
 const TodoList = ({ todos, handleComplete }) => {
   return (
     <ul>
-      {todos.map(todo => (
-        <li key={todo.id} style={{ marginBottom: "10px" }}>
-          <span
-            style={{ textDecoration: todo.completed ? "line-through" : "none", marginRight: "10px" }}
-          >
+      {todos.map((todo) => (
+        <li key={todo.id}>
+          <span style={{ textDecoration: todo.completed ? "line-through" : "none" }}>
             {todo.text}
           </span>
           {!todo.completed && (

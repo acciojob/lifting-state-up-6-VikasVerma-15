@@ -9,21 +9,27 @@ const App = () => {
     { id: 3, text: "Master Lifting State Up", completed: false },
   ]);
 
+  const [hideButtons, setHideButtons] = useState(false);
+
   const handleComplete = (id) => {
-    setTodos(prevTodos =>
-      prevTodos.map(todo =>
-        todo.id === id
-          ? { ...todo, completed: true }
-          : todo
+    setTodos(prev =>
+      prev.map(todo =>
+        todo.id === id ? { ...todo, completed: true } : todo
       )
     );
+    setHideButtons(true); 
   };
 
   return (
     <div>
-      <TodoList todos={todos} handleComplete={handleComplete} />
+      <TodoList
+        todos={todos}
+        handleComplete={handleComplete}
+        hideButtons={hideButtons}
+      />
     </div>
   );
 };
 
 export default App;
+

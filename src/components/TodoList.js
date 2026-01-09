@@ -1,11 +1,9 @@
 import React from "react";
 
-const TodoList = ({ todos, handleComplete }) => {
-  const anyCompleted = todos.some(todo => todo.completed);
-
+const TodoList = ({ todos, handleComplete, hideButtons }) => {
   return (
     <ul>
-      {todos.map((todo) => (
+      {todos.map(todo => (
         <li key={todo.id}>
           <span
             style={{
@@ -15,7 +13,7 @@ const TodoList = ({ todos, handleComplete }) => {
             {todo.text}
           </span>
 
-          {!anyCompleted && (
+          {!hideButtons && (
             <button onClick={() => handleComplete(todo.id)}>
               Complete
             </button>

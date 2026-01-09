@@ -1,6 +1,6 @@
 import React from "react";
 
-const TodoList = ({ todos, handleComplete, hideButtons }) => {
+const TodoList = ({ todos, handleComplete }) => {
   return (
     <ul>
       {todos.map(todo => (
@@ -13,7 +13,7 @@ const TodoList = ({ todos, handleComplete, hideButtons }) => {
             {todo.text}
           </span>
 
-          {!hideButtons && (
+          {!todo.completed && (
             <button onClick={() => handleComplete(todo.id)}>
               Complete
             </button>
@@ -25,3 +25,4 @@ const TodoList = ({ todos, handleComplete, hideButtons }) => {
 };
 
 export default TodoList;
+

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import TodoList from "./TodoList";
-import './../styles/App.css';
 
 const App = () => {
   const [todos, setTodos] = useState([
@@ -10,18 +9,12 @@ const App = () => {
   const handleComplete = (id) => {
     setTodos(prev =>
       prev.map(todo =>
-        todo.id === id
-          ? { ...todo, completed: true }
-          : todo
+        todo.id === id ? { ...todo, completed: true } : todo
       )
     );
   };
 
-  return (
-    <div>
-      <TodoList todos={todos} handleComplete={handleComplete} />
-    </div>
-  );
+  return <TodoList todos={todos} handleComplete={handleComplete} />;
 };
 
 export default App;

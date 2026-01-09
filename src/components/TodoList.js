@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const TodoList = ({ todos, handleComplete }) => {
-  const [clicked, setClicked] = useState(false);
+  const [hideButton, setHideButton] = useState(false);
 
   return (
     <ul>
@@ -9,17 +9,17 @@ const TodoList = ({ todos, handleComplete }) => {
         <li key={todo.id}>
           <span
             style={{
-              textDecoration: todo.completed ? "line-through" : "none",
+              textDecoration: hideButton ? "line-through" : "none",
             }}
           >
             {todo.text}
           </span>
 
-          {!clicked && (
+          {!hideButton && (
             <button
               onClick={() => {
                 handleComplete(todo.id);
-                setClicked(true);
+                setHideButton(true);
               }}
             >
               Complete

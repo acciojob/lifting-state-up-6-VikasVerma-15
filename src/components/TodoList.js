@@ -6,9 +6,7 @@ const TodoList = ({ todos, handleComplete }) => {
       {todos.map(todo => (
         <li key={todo.id}>
           <span>{todo.text}</span>
-          <button onClick={() => handleComplete(todo.id)}>
-            Complete
-          </button>
+          <button onClick={handleComplete}>Complete</button>
         </li>
       ))}
     </ul>
@@ -16,5 +14,4 @@ const TodoList = ({ todos, handleComplete }) => {
 };
 
 export default TodoList;
-
 

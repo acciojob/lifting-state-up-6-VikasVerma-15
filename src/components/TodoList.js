@@ -1,6 +1,8 @@
 import React from "react";
 
 const TodoList = ({ todos, handleComplete }) => {
+  const anyCompleted = todos.some(todo => todo.completed);
+
   return (
     <ul>
       {todos.map((todo) => (
@@ -13,7 +15,7 @@ const TodoList = ({ todos, handleComplete }) => {
             {todo.text}
           </span>
 
-          {!todo.completed && (
+          {!anyCompleted && (
             <button onClick={() => handleComplete(todo.id)}>
               Complete
             </button>

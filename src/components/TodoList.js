@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 const TodoList = ({ todos, handleComplete }) => {
+  const [clicked, setClicked] = useState(false);
+
   return (
     <ul>
       {todos.map(todo => (
@@ -13,8 +15,13 @@ const TodoList = ({ todos, handleComplete }) => {
             {todo.text}
           </span>
 
-          {!todo.completed && (
-            <button onClick={() => handleComplete(todo.id)}>
+          {!clicked && (
+            <button
+              onClick={() => {
+                handleComplete(todo.id);
+                setClicked(true);
+              }}
+            >
               Complete
             </button>
           )}
@@ -25,4 +32,5 @@ const TodoList = ({ todos, handleComplete }) => {
 };
 
 export default TodoList;
+
 

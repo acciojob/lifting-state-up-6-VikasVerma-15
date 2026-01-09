@@ -9,11 +9,15 @@ const App = () => {
     { id: 3, text: "Master Lifting State Up", completed: false },
   ]);
 
- const handleComplete = (id) => {
-  setTodos((prevTodos) =>
-    prevTodos.filter((todo) => todo.id !== id)
-  );
-};
+  const handleComplete = (id) => {
+    setTodos(prevTodos =>
+      prevTodos.map(todo =>
+        todo.id === id
+          ? { ...todo, completed: true }
+          : todo
+      )
+    );
+  };
 
   return (
     <div>
@@ -23,4 +27,3 @@ const App = () => {
 };
 
 export default App;
-

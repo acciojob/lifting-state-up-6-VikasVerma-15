@@ -5,7 +5,7 @@ const TodoList = ({ todos, handleComplete }) => {
     <ul>
       {todos.map(todo => (
         <li key={todo.id}>
-          <span>{todo.text}</span>
+          {todo.text}
           <button onClick={handleComplete}>Complete</button>
         </li>
       ))}

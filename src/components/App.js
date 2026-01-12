@@ -1,20 +1,18 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import TodoList from "./TodoList";
 
-const App = () => {
+function App() {
   const [todos, setTodos] = useState([
-    { id: 1, text: "Learn React", completed: false }
+    { text: "Learn React", completed: false },
   ]);
 
-  const handleComplete = (id) => {
-    setTodos(
-      todos.map(todo =>
-        todo.id === id ? { ...todo, completed: true } : todo
-      )
-    );
+  const toggleTodo = (index) => {
+    const updated = [...todos];
+    updated[index].completed = !updated[index].completed;
+    setTodos(updated);
   };
 
-  return <TodoList todos={todos} handleComplete={handleComplete} />;
-};
+  return <TodoList todos={todos} toggleTodo={toggleTodo} />;
+}
 
 export default App;

@@ -1,4 +1,5 @@
 import React from "react";
+
 function TodoList({ todos, toggleTodo }) {
   return (
     <ul>
@@ -12,9 +13,11 @@ function TodoList({ todos, toggleTodo }) {
             {todo.text}
           </span>
 
-          <button onClick={() => toggleTodo(index)}>
-            Complete
-          </button>
+          {!todo.completed && (
+            <button onClick={() => toggleTodo(index)}>
+              Complete
+            </button>
+          )}
         </li>
       ))}
     </ul>

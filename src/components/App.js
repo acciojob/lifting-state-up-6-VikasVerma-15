@@ -3,8 +3,8 @@ import TodoList from "./TodoList";
 
 function App() {
   const [todos, setTodos] = useState([
-    { text: "Learn React", completed: false },
-  ]);
+  { id: 1, text: "Learn React", completed: false }
+]);
 
   const toggleTodo = (index) => {
     const updated = [...todos];

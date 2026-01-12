@@ -3,11 +3,17 @@ import TodoList from "./TodoList";
 
 const App = () => {
   const [todos, setTodos] = useState([
-    { id: 1, text: "Learn React" }
+    { id: 1, text: "Learn React", completed: false }
   ]);
 
-  const handleComplete = () => {
-    setTodos([]); // remove all todos AFTER click
+  const handleComplete = (id) => {
+    setTodos(prevTodos =>
+      prevTodos.map(todo =>
+        todo.id === id
+          ? { ...todo, completed: true }
+          : todo
+      )
+    );
   };
 
   return <TodoList todos={todos} handleComplete={handleComplete} />;

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import TodoList from "./TodoList";
 
 const App = () => {
   const [todos, setTodos] = useState([
@@ -13,20 +14,7 @@ const App = () => {
     );
   };
 
-  return (
-    <ul>
-      {todos.map(todo => (
-        <li key={todo.id}>
-          {todo.text}
-          {!todo.completed && (
-            <button onClick={() => handleComplete(todo.id)}>
-              Complete
-            </button>
-          )}
-        </li>
-      ))}
-    </ul>
-  );
+  return <TodoList todos={todos} handleComplete={handleComplete} />;
 };
 
 export default App;

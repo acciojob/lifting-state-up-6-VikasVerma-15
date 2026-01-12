@@ -1,5 +1,4 @@
 import React from "react";
-
 function TodoList({ todos, toggleTodo }) {
   return (
     <ul>
@@ -23,5 +22,4 @@ function TodoList({ todos, toggleTodo }) {
     </ul>
   );
 }
-
 export default TodoList;

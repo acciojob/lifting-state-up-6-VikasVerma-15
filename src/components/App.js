@@ -7,12 +7,13 @@ function App() {
   ]);
 
   const handleComplete = (index) => {
-    const updatedTodos = [...todos];
-    updatedTodos[index].completed = true;
-    setTodos(updatedTodos);
+    const updated = [...todos];
+    updated[index].completed = true;
+    setTodos(updated);
   };
 
   return <TodoList todos={todos} handleComplete={handleComplete} />;
 }
 
 export default App;
+

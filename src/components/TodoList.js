@@ -1,5 +1,6 @@
 import React from "react";
-function TodoList({ todos, toggleTodo }) {
+
+function TodoList({ todos, handleComplete }) {
   return (
     <ul>
       {todos.map((todo, index) => (
@@ -13,8 +14,8 @@ function TodoList({ todos, toggleTodo }) {
           </span>
 
           {!todo.completed && (
-            <button onClick={() => toggleTodo(index)}>
-              Complete
+            <button onClick={() => handleComplete(index)}>
+              complete
             </button>
           )}
         </li>
@@ -22,4 +23,5 @@ function TodoList({ todos, toggleTodo }) {
     </ul>
   );
 }
+
 export default TodoList;

@@ -3,16 +3,16 @@ import TodoList from "./TodoList";
 
 function App() {
   const [todos, setTodos] = useState([
-  { id: 1, text: "Learn React", completed: false }
-]);
+    { text: "Learn React", completed: false }
+  ]);
 
-  const toggleTodo = (index) => {
-    const updated = [...todos];
-    updated[index].completed = !updated[index].completed;
-    setTodos(updated);
+  const handleComplete = (index) => {
+    const updatedTodos = [...todos];
+    updatedTodos[index].completed = true; // ❗ no toggle
+    setTodos(updatedTodos);
   };
 
-  return <TodoList todos={todos} toggleTodo={toggleTodo} />;
+  return <TodoList todos={todos} handleComplete={handleComplete} />;
 }
 
 export default App;

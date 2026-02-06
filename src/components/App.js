@@ -3,9 +3,7 @@ import TodoList from "./TodoList";
 
 function App() {
   const [todos, setTodos] = useState([
-    { text: "Learn React", completed: false },
-    { text: "Build a React app", completed: false },
-    { text: "Deploy the React app", completed: false }
+    { text: "Learn React", completed: false }
   ]);
 
   const handleComplete = (index) => {

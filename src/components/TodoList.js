@@ -5,17 +5,11 @@ function TodoList({ todos, handleComplete }) {
     <ul>
       {todos.map((todo, index) => (
         <li key={index}>
-          <span
-            style={{
-              textDecoration: todo.completed ? "line-through" : "none",
-            }}
-          >
-            {todo.text}
-          </span>
+          <span>{todo.text}</span>
 
           {!todo.completed && (
             <button onClick={() => handleComplete(index)}>
-              complete
+              Complete
             </button>
           )}
         </li>
